@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lycée Sidi Ali-Lebhar - Excellence en Éducation</title>
+    <meta name="description" content="Le Lycée Sidi Ali-Lebhar en Algérie offre une éducation d'excellence avec des filières scientifiques, techniques et littéraires. Découvrez notre établissement, nos programmes et notre équipe pédagogique.">
+    <meta name="keywords" content="Lycée Sidi Ali-Lebhar, école Algérie, éducation secondaire, baccalauréat Algérie, filières scientifiques, lycée Oran">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lyceesidialilebhar.dz/">
+    <meta property="og:title" content="Lycée Sidi Ali-Lebhar - Excellence en Éducation">
+    <meta property="og:description" content="Le Lycée Sidi Ali-Lebhar en Algérie offre une éducation d'excellence avec des filières scientifiques, techniques et littéraires.">
+    <meta property="og:image" content="https://lyceesidialilebhar.dz/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lyceesidialilebhar.dz/">
+    <meta property="twitter:title" content="Lycée Sidi Ali-Lebhar - Excellence en Éducation">
+    <meta property="twitter:description" content="Le Lycée Sidi Ali-Lebhar en Algérie offre une éducation d'excellence avec des filières scientifiques, techniques et littéraires.">
+    <meta property="twitter:image" content="https://lyceesidialilebhar.dz/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+               extend: {
+                    colors: {
+                        primary: {
+                            light: '#3b82f6',  // Utiliser comme bg-primary-light
+                            dark: '#2563eb',   // Utiliser comme bg-primary-dark
+                        },
+                        secondary: {
+                            light: '#10b981',
+                            dark: '#059669',
+                        },
+                        dark: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            700: '#374151',
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* Custom CSS for elements that can't be done with Tailwind */
+        .blur-nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-dark-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full blur-nav bg-white/80 dark:bg-dark-800/80 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="h-10 w-10 rounded-full bg-primary-light dark:bg-primary-dark flex items-center justify-center text-white font-bold">
+                        SAL
+                    </div>
+                    <span class="ml-3 text-xl font-bold hidden sm:block">Lycée Sidi Ali-Lebhar</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-primary.dark dark:text-primary.light font-medium hover:text-primary.light dark:hover:text-primary.dark transition">Accueil</a>
+                    <a href="#apropos" class="text-gray-700 dark:text-gray-300 hover:text-primary.light dark:hover:text-primary.dark transition">À propos</a>
+                    <a href="#filieres" class="text-gray-700 dark:text-gray-300 hover:text-primary.light dark:hover:text-primary.dark transition">Filières</a>
+                    <a href="#professeurs" class="text-gray-700 dark:text-gray-300 hover:text-primary.light dark:hover:text-primary.dark transition">Professeurs</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary.light dark:hover:text-primary.dark transition">Contact</a>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                    <i class="fas fa-moon text-gray-700 dark:text-yellow-300 hidden dark:block"></i>
+                    <i class="fas fa-sun text-yellow-400 dark:text-gray-300 block dark:hidden"></i>
+                </button>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden absolute top-16 left-0 w-full bg-white dark:bg-dark-800 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#accueil" class="block px-3 py-2 rounded-md text-base font-medium text-primary.dark dark:text-primary.light">Accueil</a>
+                <a href="#apropos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700">À propos</a>
+                <a href="#filieres" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700">Filières</a>
+                <a href="#professeurs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700">Professeurs</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 p-3 bg-primary.light dark:bg-primary.dark text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary.dark dark:hover:bg-primary.light">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Hero Section -->
+    <section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                    Bienvenue au <span class="gradient-text bg-gradient-to-r from-primary.light to-secondary.light">Lycée Sidi Ali-Lebhar</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 animate-slide-up">
+                    Excellence. Savoir. Innovation.
+                </p>
+                <div class="flex space-x-4 animate-slide-up">
+                    <a href="#apropos" class="px-6 py-3 bg-primary.light dark:bg-primary.dark text-white rounded-lg font-medium hover:bg-primary.dark dark:hover:bg-primary.light transition shadow-md">
+                        En savoir plus
+                    </a>
+                    <a href="#filieres" class="px-6 py-3 border border-primary.light dark:border-primary.dark text-primary.light dark:text-primary.dark rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-dark-800 transition">
+                        Nos filières
+                    </a>
+                </div>
+            </div>
+            <div class="animate-fade-in">
+                <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Étudiants du Lycée Sidi Ali-Lebhar" 
+                         class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/70 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- À propos Section -->
+    <section id="apropos" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">À propos de notre établissement</h2>
+            <div class="w-24 h-1 bg-primary.light dark:bg-primary.dark mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-bold mb-4">Notre histoire</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Fondé en 1985, le Lycée Sidi Ali-Lebhar a formé des générations d'élèves qui ont marqué l'histoire éducative de notre région. 
+                    Notre établissement porte le nom d'un érudit local renommé pour ses contributions à l'éducation et à la culture.
+                </p>
+                <h3 class="text-2xl font-bold mb-4">Nos valeurs</h3>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-secondary.light dark:text-secondary.dark mt-1 mr-2"></i>
+                        <span class="text-gray-600 dark:text-gray-300">Excellence académique et rigueur intellectuelle</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-secondary.light dark:text-secondary.dark mt-1 mr-2"></i>
+                        <span class="text-gray-600 dark:text-gray-300">Respect mutuel et tolérance</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-secondary.light dark:text-secondary.dark mt-1 mr-2"></i>
+                        <span class="text-gray-600 dark:text-gray-300">Innovation pédagogique continue</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-secondary.light dark:text-secondary.dark mt-1 mr-2"></i>
+                        <span class="text-gray-600 dark:text-gray-300">Ouverture sur le monde moderne</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="relative rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Bâtiment du Lycée Sidi Ali-Lebhar" 
+                         class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="text-primary.light dark:text-primary.dark text-4xl mb-4">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Mission</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Offrir une éducation de qualité qui prépare les élèves aux défis du 21e siècle, en combinant savoir académique et compétences pratiques.
+                </p>
+            </div>
+            <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="text-primary.light dark:text-primary.dark text-4xl mb-4">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Vision</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Devenir un pôle d'excellence éducative reconnu à l'échelle nationale, formant des citoyens éclairés et compétents.
+                </p>
+            </div>
+            <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="text-primary.light dark:text-primary.dark text-4xl mb-4">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Résultats</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    95% de réussite au baccalauréat en 2023, avec 42% de mentions Très Bien et 35% de mentions Bien.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filières Section -->
+    <section id="filieres" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 dark:bg-dark-800">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos filières académiques</h2>
+            <div class="w-24 h-1 bg-primary.light dark:bg-primary.dark mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 1ère année -->
+            <div class="bg-white dark:bg-dark-700 rounded-xl shadow-md overflow-hidden">
+                <div class="bg-primary.light dark:bg-primary.dark p-4 text-white text-center">
+                    <h3 class="text-xl font-bold">1ère année secondaire</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="openFiliereModal('1ST1', '1ère Sciences Techniques 1')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1ST1
+                        </button>
+                        <button onclick="openFiliereModal('1ST2', '1ère Sciences Techniques 2')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1ST2
+                        </button>
+                        <button onclick="openFiliereModal('1ST3', '1ère Sciences Techniques 3')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1ST3
+                        </button>
+                        <button onclick="openFiliereModal('1ST4', '1ère Sciences Techniques 4')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1ST4
+                        </button>
+                        <button onclick="openFiliereModal('1LT1', '1ère Lettres 1')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1LT1
+                        </button>
+                        <button onclick="openFiliereModal('1LT2', '1ère Lettres 2')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            1LT2
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2ème année -->
+            <div class="bg-white dark:bg-dark-700 rounded-xl shadow-md overflow-hidden">
+                <div class="bg-primary.light dark:bg-primary.dark p-4 text-white text-center">
+                    <h3 class="text-xl font-bold">2ème année secondaire</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="openFiliereModal('2M', '2ème Mathématiques')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2M
+                        </button>
+                        <button onclick="openFiliereModal('2SC', '2ème Sciences Expérimentales')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2SC
+                        </button>
+                        <button onclick="openFiliereModal('2MT', '2ème Mathématiques Techniques')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2MT
+                        </button>
+                        <button onclick="openFiliereModal('2GE', '2ème Gestion Économie')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2GE
+                        </button>
+                        <button onclick="openFiliereModal('2LE', '2ème Lettres Étrangères')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2LE
+                        </button>
+                        <button onclick="openFiliereModal('2LPH', '2ème Lettres Philosophie')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            2LPH
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3ème année -->
+            <div class="bg-white dark:bg-dark-700 rounded-xl shadow-md overflow-hidden">
+                <div class="bg-primary.light dark:bg-primary.dark p-4 text-white text-center">
+                    <h3 class="text-xl font-bold">3ème année secondaire</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="openFiliereModal('3M', '3ème Mathématiques')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3M
+                        </button>
+                        <button onclick="openFiliereModal('3SC', '3ème Sciences Expérimentales')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3SC
+                        </button>
+                        <button onclick="openFiliereModal('3TN', '3ème Techniques Numériques')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3TN
+                        </button>
+                        <button onclick="openFiliereModal('3GE', '3ème Gestion Économie')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3GE
+                        </button>
+                        <button onclick="openFiliereModal('3LE', '3ème Lettres Étrangères')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3LE
+                        </button>
+                        <button onclick="openFiliereModal('3LPH', '3ème Lettres Philosophie')" class="filiere-btn py-2 px-3 bg-gray-100 dark:bg-dark-600 rounded hover:bg-gray-200 dark:hover:bg-dark-500 transition">
+                            3LPH
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Professeurs Section -->
+    <section id="professeurs" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Notre équipe pédagogique</h2>
+            <div class="w-24 h-1 bg-primary.light dark:bg-primary.dark mx-auto"></div>
+        </div>
+        
+        <div class="overflow-x-auto shadow-md rounded-lg">
+            <table class="w-full text-left">
+                <thead class="bg-primary.light dark:bg-primary.dark text-white">
+                    <tr>
+                        <th class="px-6 py-3">Nom complet</th>
+                        <th class="px-6 py-3">Matière</th>
+                        <th class="px-6 py-3">Jour de réception</th>
+                        <th class="px-6 py-3">Heure de réception</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-dark-700 divide-y divide-gray-200 dark:divide-dark-600">
+                    <!-- Professeur 1 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 2 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 3 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 4 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 5 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 6 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 7 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 8 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 9 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                    <!-- Professeur 10 -->
+                    <tr class="hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                        <td class="px-6 py-4">#</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Inscription Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 dark:bg-dark-800">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Formulaire d'inscription</h2>
+                <div class="w-24 h-1 bg-primary.light dark:bg-primary.dark mx-auto"></div>
+            </div>
+            
+            <form id="inscription-form" class="bg-white dark:bg-dark-700 shadow-md rounded-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nom" class="block text-gray-700 dark:text-gray-300 mb-2">Nom complet</label>
+                        <input type="text" id="nom" name="nom" required 
+                               class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                    </div>
+                    <div>
+                        <label for="prenom" class="block text-gray-700 dark:text-gray-300 mb-2">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" required 
+                               class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="classe" class="block text-gray-700 dark:text-gray-300 mb-2">Classe</label>
+                        <select id="classe" name="classe" required 
+                                class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                            <option value="">Sélectionnez votre classe</option>
+                            <optgroup label="1ère année secondaire">
+                                <option value="1ST1">1ST1</option>
+                                <option value="1ST2">1ST2</option>
+                                <option value="1ST3">1ST3</option>
+                                <option value="1ST4">1ST4</option>
+                                <option value="1LT1">1LT1</option>
+                                <option value="1LT2">1LT2</option>
+                            </optgroup>
+                            <optgroup label="2ème année secondaire">
+                                <option value="2M">2M</option>
+                                <option value="2SC">2SC</option>
+                                <option value="2MT">2MT</option>
+                                <option value="2GE">2GE</option>
+                                <option value="2LE">2LE</option>
+                                <option value="2LPH">2LPH</option>
+                            </optgroup>
+                            <optgroup label="3ème année secondaire">
+                                <option value="3M">3M</option>
+                                <option value="3SC">3SC</option>
+                                <option value="3TN">3TN</option>
+                                <option value="3GE">3GE</option>
+                                <option value="3LE">3LE</option>
+                                <option value="3LPH">3LPH</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-gray-700 dark:text-gray-300 mb-2">Mot de passe</label>
+                        <input type="password" id="password" name="password" required 
+                               class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                    </div>
+                    <div>
+                        <label for="confirm-password" class="block text-gray-700 dark:text-gray-300 mb-2">Confirmez le mot de passe</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required 
+                               class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="g-recaptcha" data-sitekey="#"></div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full py-3 bg-primary.light dark:bg-primary.dark text-white rounded-lg font-medium hover:bg-primary.dark dark:hover:bg-primary.light transition shadow-md">
+                            S'inscrire
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <div id="inscription-success" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
+                <i class="fas fa-check-circle mr-2"></i> Veuillez vérifier votre boîte mail pour valider votre compte.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contactez-nous</h2>
+                <div class="w-24 h-1 bg-primary.light dark:bg-primary.dark mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form id="contact-form" class="bg-white dark:bg-dark-700 shadow-md rounded-lg p-8">
+                        <div class="mb-6">
+                            <label for="contact-nom" class="block text-gray-700 dark:text-gray-300 mb-2">Nom</label>
+                            <input type="text" id="contact-nom" name="nom" required 
+                                   class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" id="contact-email" name="email" required 
+                                   class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-sujet" class="block text-gray-700 dark:text-gray-300 mb-2">Sujet</label>
+                            <input type="text" id="contact-sujet" name="sujet" required 
+                                   class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" required 
+                                      class="w-full px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary.light dark:focus:ring-primary.dark focus:border-primary.light dark:focus:border-primary.dark bg-white dark:bg-dark-800 transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full py-3 bg-primary.light dark:bg-primary.dark text-white rounded-lg font-medium hover:bg-primary.dark dark:hover:bg-primary.light transition shadow-md">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="contact-success" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i> Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white dark:bg-dark-700 shadow-md rounded-lg p-8 h-full">
+                        <h3 class="text-xl font-bold mb-6">Informations de contact</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary.light dark:text-primary.dark text-xl mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Adresse</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Rue des Écoles, Quartier Sidi Ali<br>
+                                    Oran, Algérie
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary.light dark:text-primary.dark text-xl mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    sidialilebhar06@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary.light dark:text-primary.dark text-xl mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Téléphone</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    +213 ### ### ###
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary.light dark:hover:bg-primary.dark hover:text-white transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary.light dark:hover:bg-primary.dark hover:text-white transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary.light dark:hover:bg-primary.dark hover:text-white transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-800 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Lycée Sidi Ali-Lebhar</h3>
+                    <p class="mb-4">
+                        Établissement d'excellence éducative depuis 1985, formant les leaders de demain.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="#apropos" class="hover:text-white transition">À propos</a></li>
+                        <li><a href="#filieres" class="hover:text-white transition">Filières</a></li>
+                        <li><a href="#professeurs" class="hover:text-white transition">Professeurs</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Filières</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Scientifiques</a></li>
+                        <li><a href="#" class="hover:text-white transition">Techniques</a></li>
+                        <li><a href="#" class="hover:text-white transition">Littéraires</a></li>
+                        <li><a href="#" class="hover:text-white transition">Langues étrangères</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">Rue des Écoles, Quartier Sidi Ali</p>
+                        <p class="mb-2">Oran, Algérie</p>
+                        <p class="mb-2">Email: sidialilebhar06@gmail.com</p>
+                        <p>Tél: +213 ### ### ###</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Lycée Sidi Ali-Lebhar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Filière Modal -->
+    <div id="filiere-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay opacity-0 invisible transition-opacity duration-300">
+        <div class="bg-white dark:bg-dark-700 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                    <button onclick="closeFiliereModal()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="mb-6">
+                    <p id="modal-description" class="text-gray-600 dark:text-gray-300"></p>
+                </div>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">Matières et coefficients</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 dark:bg-dark-600">
+                                    <th class="px-4 py-2 text-left">Matière</th>
+                                    <th class="px-4 py-2 text-left">Coefficient</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal-matières" class="divide-y divide-gray-200 dark:divide-dark-600">
+                                <!-- Matières will be added by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <a id="calcul-moyenne-link" href="#" target="_blank" class="px-4 py-2 bg-primary.light dark:bg-primary.dark text-white rounded hover:bg-primary.dark dark:hover:bg-primary.light transition">
+                        Calculer ma moyenne
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference or use system preference
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        // Apply the saved theme
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('inscription-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to your backend
+            // For this example, we'll just show the success message
+            
+            // Hide form and show success message
+            this.classList.add('hidden');
+            document.getElementById('inscription-success').classList.remove('hidden');
+            
+            // In a real implementation, you would:
+            // 1. Send data to backend (e.g., Firebase, Formspree, custom API)
+            // 2. Backend would send confirmation email to sidialilebhar06@gmail.com
+            // 3. User would receive email with validation link
+        });
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to your backend
+            // For this example, we'll just show the success message
+            
+            // Hide form and show success message
+            this.classList.add('hidden');
+            document.getElementById('contact-success').classList.remove('hidden');
+            
+            // In a real implementation, you would:
+            // 1. Send data to backend (e.g., Firebase, Formspree, custom API)
+            // 2. Backend would process the message and potentially send it to sidialilebhar06@gmail.com
+        });
+        
+        // Filière modal functionality
+        function openFiliereModal(code, title) {
+            const modal = document.getElementById('filiere-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalMatieres = document.getElementById('modal-matières');
+            const calculMoyenneLink = document.getElementById('calcul-moyenne-link');
+            
+            // Set modal content based on the filière
+            modalTitle.textContent = title;
+            
+            // Generate a description based on the filière type
+            if (code.includes('ST') || code.includes('M') || code.includes('SC') || code.includes('TN')) {
+                modalDescription.textContent = `La filière ${code} est une filière scientifique et technique qui prépare les élèves aux études supérieures dans les domaines des sciences, des technologies et de l'ingénierie. Les élèves suivent un programme rigoureux avec un accent particulier sur les mathématiques, les sciences physiques et les technologies numériques.`;
+            } else if (code.includes('GE')) {
+                modalDescription.textContent = `La filière ${code} est une filière économique qui forme les élèves aux concepts de gestion, d'économie et de commerce. Ce programme prépare aux études supérieures en économie, gestion et commerce.`;
+            } else {
+                modalDescription.textContent = `La filière ${code} est une filière littéraire qui met l'accent sur les langues, la philosophie et les sciences humaines. Ce programme prépare aux études supérieures en lettres, langues, droit et sciences humaines.`;
+            }
+            
+            // Generate matières based on the filière type
+            modalMatieres.innerHTML = '';
+            
+            let matieres = [];
+            
+            if (code.includes('1ST') || code.includes('2M') || code.includes('3M')) {
+                matieres = [
+                    { nom: 'Mathématiques', coeff: 5 },
+                    { nom: 'Physique', coeff: 4 },
+                    { nom: 'Sciences Naturelles', coeff: 3 },
+                    { nom: 'Langue Arabe', coeff: 2 },
+                    { nom: 'Langue Française', coeff: 2 },
+                    { nom: 'Langue Anglaise', coeff: 2 },
+                    { nom: 'Histoire-Géographie', coeff: 1 },
+                    { nom: 'Philosophie', coeff: 1 },
+                ];
+            } else if (code.includes('2SC') || code.includes('3SC')) {
+                matieres = [
+                    { nom: 'Mathématiques', coeff: 4 },
+                    { nom: 'Physique', coeff: 3 },
+                    { nom: 'Sciences Naturelles', coeff: 4 },
+                    { nom: 'Langue Arabe', coeff: 2 },
+                    { nom: 'Langue Française', coeff: 2 },
+                    { nom: 'Langue Anglaise', coeff: 2 },
+                    { nom: 'Histoire-Géographie', coeff: 1 },
+                    { nom: 'Philosophie', coeff: 1 },
+                ];
+            } else if (code.includes('2MT') || code.includes('3TN')) {
+                matieres = [
+                    { nom: 'Mathématiques', coeff: 5 },
+                    { nom: 'Physique', coeff: 4 },
+                    { nom: 'Technologie', coeff: 4 },
+                    { nom: 'Langue Arabe', coeff: 2 },
+                    { nom: 'Langue Française', coeff: 2 },
+                    { nom: 'Langue Anglaise', coeff: 2 },
+                    { nom: 'Histoire-Géographie', coeff: 1 },
+                ];
+            } else if (code.includes('2GE') || code.includes('3GE')) {
+                matieres = [
+                    { nom: 'Mathématiques', coeff: 4 },
+                    { nom: 'Économie', coeff: 4 },
+                    { nom: 'Gestion', coeff: 3 },
+                    { nom: 'Langue Arabe', coeff: 2 },
+                    { nom: 'Langue Française', coeff: 2 },
+                    { nom: 'Langue Anglaise', coeff: 2 },
+                    { nom: 'Histoire-Géographie', coeff: 1 },
+                    { nom: 'Philosophie', coeff: 1 },
+                ];
+            } else if (code.includes('LT') || code.includes('LE') || code.includes('LPH')) {
+                matieres = [
+                    { nom: 'Langue Arabe', coeff: 4 },
+                    { nom: 'Langue Française', coeff: 3 },
+                    { nom: 'Langue Anglaise', coeff: 3 },
+                    { nom: 'Philosophie', coeff: 3 },
+                    { nom: 'Histoire-Géographie', coeff: 2 },
+                    { nom: 'Mathématiques', coeff: 1 },
+                    { nom: 'Sciences', coeff: 1 },
+                ];
+            }
+            
+            // Add matières to the table
+            matieres.forEach(matiere => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50 dark:hover:bg-dark-600';
+                
+                const nomCell = document.createElement('td');
+                nomCell.className = 'px-4 py-2';
+                nomCell.textContent = matiere.nom;
+                
+                const coeffCell = document.createElement('td');
+                coeffCell.className = 'px-4 py-2';
+                coeffCell.textContent = matiere.coeff;
+                
+                row.appendChild(nomCell);
+                row.appendChild(coeffCell);
+                modalMatieres.appendChild(row);
+            });
+            
+            // Set the link for calculating average
+            if (code.startsWith('2')) {
+                calculMoyenneLink.href = 'https://eddirasa.com/ens-sec/2as/average/';
+            } else if (code.startsWith('3')) {
+                calculMoyenneLink.href = 'https://eddirasa.com/ens-sec/3as/average/';
+            } else {
+                calculMoyenneLink.href = '#';
+            }
+            
+            // Show the modal
+            modal.classList.remove('opacity-0', 'invisible');
+            setTimeout(() => {
+                modal.querySelector('div > div').classList.remove('scale-95');
+                modal.querySelector('div > div').classList.add('scale-100');
+            }, 10);
+        }
+        
+        function closeFiliereModal() {
+            const modal = document.getElementById('filiere-modal');
+            modal.querySelector('div > div').classList.remove('scale-100');
+            modal.querySelector('div > div').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('opacity-0', 'invisible');
+            }, 300);
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('filiere-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFiliereModal();
+            }
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate-fade-in');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
